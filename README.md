@@ -6,5 +6,6 @@ It has ben configured with:
 Shadcn UI  -- default/gray
 Next Themes
 Tanstack Query
+Sonner
 
 ```
