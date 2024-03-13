@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Lexend } from "next/font/google";
 import "./globals.css";
+import Providers from "./providers";
+import ThemeSwitcher from "@/components/ThemeSwitcher";
+import { Toaster } from "sonner";
 
-const inter = Inter({ subsets: ["latin"] });
+const lexend = Lexend({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,8 +18,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html>
+      <body className={lexend.className}>
+        <Toaster richColors closeButton position="bottom-right" />
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }
